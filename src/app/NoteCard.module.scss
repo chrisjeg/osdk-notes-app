@@ -1,0 +1,61 @@
+@keyframes fadeAndDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note {
+  background-color: var(--warning);
+  min-width: 200px;
+  padding: var(--padding);
+  flex: 1 1 0;
+  min-height: 300px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.5s, box-shadow 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+
+  animation: fadeAndDrop 0.5s ease;
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background-color: var(--danger) !important;
+      border: 1px solid var(--danger) !important;
+      height: 30px;
+      width: 30px;
+      padding: 0;
+
+      &:hover {
+        background-color: var(--danger-dark) !important;
+      }
+
+      &:active {
+        background-color: var(--danger-darker) !important;
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  textarea {
+    flex-grow: 1;
+    background-color: var(--warning);
+    color: var(--font-color);
+    border: none;
+    resize: none;
+  }
+}

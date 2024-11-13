@@ -1,0 +1,33 @@
+$application-font-color: #143642;
+$gap: 10px;
+$padding: 10px;
+
+.takeNote {
+    color: $application-font-color;
+    width: 100vw;
+    
+    section {
+        display: flex;
+        padding: $padding;
+        gap: $gap;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    header {
+        display: flex;
+        padding: $padding;
+        gap: $gap;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: large;
+        align-self: center;
+    }
+
+    .actions {
+        display: flex;
+        gap: $gap;
+    }
+}
+

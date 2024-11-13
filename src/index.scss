@@ -1,0 +1,81 @@
+// using Node.js-style package resolution in a CSS file:
+@import "normalize.css";
+
+:root {
+  --application-color: #fce4d8;
+  --application-border: hsl(from var(--application-color) h s calc(l - 10));
+  --font-color: #143642;
+  --note-color: darkgray;
+  --gap: 10px;
+  --padding: 10px;
+
+  --danger: #f75590;
+  --danger-darker: hsl(from var(--danger) h s calc(l - 10));
+  --danger-dark: hsl(from var(--danger) h s calc(l - 20));
+
+  --warning: #fbd87f;
+
+  --primary: #f9a828;
+  --primary-darker: hsl(from var(--primary) h s calc(l - 10));
+  --primary-dark: hsl(from var(--primary) h s calc(l - 20));
+  --success: #10ffcb;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--font-color);
+  background-color: var(--application-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 3px;
+    padding: var(--padding);
+    
+    &:hover {
+      background-color: var(--primary-darker);
+    }
+
+    &:active {
+      background-color: var(--primary-dark);
+    }
+  }
+
+  section {
+    display: flex;
+    padding: var(--padding);
+    gap: var(--gap);
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  header {
+    display: flex;
+    padding: var(--padding);
+    gap: var(--gap);
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: large;
+    align-items: center;
+    border-bottom: 1px solid var(--application-border);
+  }
+}
