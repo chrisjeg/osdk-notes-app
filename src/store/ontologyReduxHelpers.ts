@@ -32,7 +32,7 @@ interface ActionSignatures<Params> {
 export const getInvalidatedTagsForActionResult = <TagTypes>(
   actionEditResponse: ActionEditResponse | undefined
 ): ReadonlyArray<TagDescription<TagTypes>> => {
-  let tags: Array<TagDescription<TagTypes>> = [];
+  const tags: Array<TagDescription<TagTypes>> = [];
   if (actionEditResponse == null) {
     return tags;
   }
