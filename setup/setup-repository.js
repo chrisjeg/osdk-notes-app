@@ -14,10 +14,9 @@ const foundryUrl = await input({ message: 'Enter your Palantir Foundry URL:', va
     }
     return true;
 } });
-
 const foundryUrlWithoutTailSlash = foundryUrl.replace(/\/$/, '');
 
-console.log(`Open your browser and navigate to ${foundryUrlWithoutTailSlash}/workspace/developer-console/ and open "Take Note" to get your Application RID, Client ID and Registry URL.`);
+console.log(`⚠️ Open your browser and navigate to ${foundryUrlWithoutTailSlash}/workspace/developer-console/ and open "Take Note" to get your Application RID, Client ID and Registry URL.`);
 const applicationRid = await input({ message: 'Enter your Application RID:' });
 const clientId = await input({ message: 'Enter your Client ID:' });
 const registryUrl = await input({ message: 'Enter your Registry URL:', validate: (url) => {
@@ -39,7 +38,7 @@ ${scope}:registry=${registryUrl}
 console.log(`✏️ Writing oauth redirect configuration to .env.development file `);
 writeFileSync('.env.development', `
 VITE_FOUNDRY_API_URL=${foundryUrlWithoutTailSlash}
-VITE_FOUNDRY_REDIRECT_URI=http://localhost:8080/auth/callback
+VITE_FOUNDRY_REDIRECT_URL=http://localhost:8080/auth/callback
 VITE_FOUNDRY_CLIENT_ID=${clientId}
 `);
 
