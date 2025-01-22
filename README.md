@@ -37,7 +37,3 @@ If you did not fill in the URL your production application will be hosted on you
 In order to make API requests to Foundry, CORS must be configured for the stack to allow the production origin to load resources. This will be automatically done for you if you are using Foundry website hosting. The configured OAuth client must also allow the production origin auth callback as a redirect URL.
 
 A `foundry.config.json` file is included in the root of this project to make deploying to Foundry website hosting with [`@osdk/cli`](https://www.npmjs.com/package/@osdk/cli) easier. If you are not using Foundry website hosting for your application you may delete this file.
-
-// DRAG PACKAGE IN
-// Navigate to Take Note > SDK Versions > npm and generate a new version
-// NPM INSTALL
