@@ -8,7 +8,7 @@ checkEnv(url, "VITE_FOUNDRY_API_URL");
 checkEnv(clientId, "VITE_FOUNDRY_CLIENT_ID");
 checkEnv(redirectUrl, "VITE_FOUNDRY_REDIRECT_URL");
 
-const ontologyRid: string = "ri.ontology.main.ontology.6801b786-b528-4b21-bae2-31003de27a01";
+const ontologyRid = "<ontology-rid>";
 
 function checkEnv(
   value: string | undefined,
