@@ -26,7 +26,6 @@ const registryUrl = await input({ message: 'Enter your Registry URL:', validate:
     }
     return true;
 } });
-const ontologyRid = await input({ message: 'Enter your Ontology RID:' });
 
 console.log(`✏️ Writing authentication configuration to .npmrc file `);
 writeFileSync('.npmrc', `
@@ -48,11 +47,6 @@ const foundryConfigJson = JSON.parse(foundryConfig);
 foundryConfigJson.foundryUrl = foundryUrlWithoutTailSlash;
 foundryConfigJson.site.application = applicationRid;
 writeFileSync('foundry.config.json', JSON.stringify(foundryConfigJson, null, 2));
-
-console.log("Replacing ontology rid in src/client.ts file");
-const clientFile = readFileSync('src/client.ts', 'utf8');
-const updatedClientFile = clientFile.replace(/<ontology-rid>/g, ontologyRid);
-writeFileSync('src/client.ts', updatedClientFile);
 
 const sdkGenerationUrl = `${foundryUrlWithoutTailSlash}/workspace/developer-console/app/${applicationRid}/sdk/generation?packageType=npm`;
 console.log(`🤩 Almost complete! Navigate to ${sdkGenerationUrl}, select the latest version and copy the "Installation instructions"`);
