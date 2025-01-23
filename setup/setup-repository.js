@@ -10,7 +10,7 @@ console.log(`⚠️ Open your browser and navigate to Developer Console in your 
 const applicationRid = await input({ message: 'Enter your Application RID:' });
 const clientId = await input({ message: 'Enter your Client ID:' });
 const registryUrl = await input({ message: 'Enter your Registry URL:', validate: (url) => {
-    const urlRegex = new RegExp(`^https://[a-zA-Z0-9-]+.palantirfoundry.com/artifacts/api/repositories/[a-zA-Z0-9-.]+/contents/release/npm$`);
+    const urlRegex = new RegExp(`^https://[a-zA-Z0-9-.]+palantirfoundry.(com|co.uk)/artifacts/api/repositories/[a-zA-Z0-9-.]+/contents/release/npm$`);
     if (!urlRegex.test(url)) {
         return `Invalid Registry URL, should be of the format https://<instance-name>.palantirfoundry.com/artifacts/api/repositories/<artifacts-rid>/contents/release/npm`;
     }
